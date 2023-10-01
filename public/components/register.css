@@ -13,6 +13,18 @@ body {
     align-items: center;
     height: 100vh; /* Isso define a altura do corpo para a altura da viewport */
     margin: 0; /* Remova as margens padrão do corpo */
+    background: linear-gradient(to bottom right, #ffffff, #4169e1);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease-in-out infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
 .form {
@@ -20,7 +32,7 @@ body {
     flex-direction: column;
     gap: 10px;
     max-width: 350px;
-    background-color: #fff;
+    background-color: #ffffff79;
     padding: 20px;
     border-radius: 20px;
     position: relative;
