@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="./styles/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/cadastre-se.png" type="image/x-icon">
     <title>Form</title>
     <script src="./scripts/script.js"></script>
 </head>
 <body>
-    <form class="form"  method="post">
+    <form class="form" method="post">
         <p class="form-title">Sign in to your account</p>
          <div class="input-container">
            <input placeholder="Enter email" type="email">
@@ -18,7 +19,6 @@
        </div>
        <div class="input-container">
            <input placeholder="Enter password" type="password" name="password" id="password">
- 
            <span class="toggle-password" onclick="togglePasswordVisibility('password')"> 
             <span id="toggleText"><img id="toggleIcon" src="img/olho2.svg" alt=""></span>
            </span>
@@ -26,10 +26,9 @@
           <button class="submit" type="submit">
          Sign in
        </button>
- 
        <p class="signup-link">
          No account?
-         <a href="/public/register.html">Sign up</a>
+         <a href="/signup">Sign up</a>
        </p>
     </form>
 </body>

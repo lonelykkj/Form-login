@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/register.css">
+    <link rel="shortcut icon" href="img/cadastre-se.png" type="image/x-icon">
     <title>Register</title>
     <script src="./scripts/script.js"></script>
 </head>
 <body>
-    <form class="form">
-        <p class="title">Register </p>
+    <form class="form" action="/" method="post">
+        <p class="title">Register</p>
             <div class="flex">
             <label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" name="name" class="input">
                 <span>Firstname</span>
             </label>
     
             <label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" name="lastname" class="input">
                 <span>Lastname</span>
             </label>
         </div>  
                 
         <label>
-            <input required="" placeholder="" type="email" class="input">
+            <input required="" placeholder="" type="email" name="email" class="input">
             <span>Email</span>
         </label> 
             
         <label>
-            <input required="" placeholder="" type="password" class="input">
+            <input required="" placeholder="" type="password" name="password" class="input">
             <span>Password</span>
         </label>
         <button class="submit">Submit</button>
-        <p class="signin">Already have an acount ? <a href="/public/index.html">Signin</a> </p>
+        <p class="signin">Already have an acount ? <a href="/">Signin</a> </p>
     </form>
 </body>
 </html>
