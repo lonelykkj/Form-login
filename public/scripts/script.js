@@ -1,18 +1,14 @@
 function togglePasswordVisibility(inputId) {
     const passwordInput = document.getElementById(inputId);
-    const toggleButton = document.querySelector('.toggle-password');
-    const toggleText = document.getElementById('toggleText');
     const toggleIcon = document.getElementById('toggleIcon');
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleText.textContent = 'Ocultar Senha';
-        toggleIcon.classList.remove('bi-eye');
-        toggleIcon.classList.add('bi-eye-slash');
+        toggleIcon.src = 'img/olho.svg'; 
+        toggleIcon.alt = 'Ocultar Senha';
     } else {
         passwordInput.type = 'password';
-        toggleText.textContent = 'Mostrar Senha';
-        toggleIcon.classList.remove('bi-eye-slash');
-        toggleIcon.classList.add('bi-eye');
+        toggleIcon.src = 'img/olho2.svg '; 
+        toggleIcon.alt = 'Mostrar Senha';
     }
 }
