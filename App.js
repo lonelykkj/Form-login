@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const Users = require('./public/models/User');
+const User = require('./models/User');
 const port = 8085;
-require("./config")
+// const db  = require("./public/models/db")
+
+app.use(express.json());
 
 // Body-Parser
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -12,8 +14,8 @@ app.use(bodyParser.json())
 // Configurando o Express para servir arquivos estáticos da pasta 'public'
 app.use(express.static(__dirname + '/public'));
 
-app.post("/", (req, res) => {
-  Users.create({
+app.post("/", async (req, res) => {
+  await User.create({
     name: req.body.name,
     lastname: req.body.lastname,
     email: req.body.email,
@@ -22,11 +24,8 @@ app.post("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
   }).catch((err) => {
     console.error("Erro ao criar usuário:", err);
-    res.status(500).send("Erro ao criar usuário");
+    res.sendFile(__dirname + "/public/error.html");
   });
-
-  
-  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.get('/register', (req, res) => {
