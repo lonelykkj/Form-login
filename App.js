@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const Users = require('./public/models/User');
 const port = 8085;
 require("./config")
 
@@ -12,11 +13,19 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public'));
 
 app.post("/", (req, res) => {
-  // res.send("Name: "+req.body.name+" / Email: "+req.body.email)
-  req.body.name
-  req.body.lastname
-  req.body.email
-  req.body.password
+  Users.create({
+    name: req.body.name,
+    lastname: req.body.lastname,
+    email: req.body.email,
+    senha: req.body.password // Certifique-se de usar o nome do campo correto aqui
+  }).then(() => {
+    res.sendFile(__dirname + "/public/index.html");
+  }).catch((err) => {
+    console.error("Erro ao criar usuário:", err);
+    res.status(500).send("Erro ao criar usuário");
+  });
+
+  
   res.sendFile(__dirname + "/public/index.html");
 });
 
