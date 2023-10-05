@@ -1,3 +1,5 @@
-config.js
+models/
+
+node_modules/
 
 *.json
